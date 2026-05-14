@@ -93,6 +93,115 @@ footer {
     padding: 20px;
 }
 
+/* Carousel Styles */
+.carousel-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f7 100%);
+}
+
+.carousel-section h2 {
+    text-align: center;
+    color: #0b3d91;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.carousel-wrapper {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeIn 0.8s;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(11, 61, 145, 0.8);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 15px 20px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: rgba(11, 61, 145, 1);
+}
+
+.carousel-prev {
+    left: 15px;
+}
+
+.carousel-next {
+    right: 15px;
+}
+
+.carousel-dots {
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+.carousel-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #c8102e;
+}
+
+.carousel-dot:hover {
+    background-color: #999;
+}
+
 /* Tuition Section Styles */
 #tuition {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -313,6 +422,17 @@ footer {
 .acsi-link:hover {
     background: #1a5ab3;
 }
+
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        height: 300px;
+    }
+    
+    .carousel-prev, .carousel-next {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+}
 </style>
 </head>
 
@@ -334,6 +454,38 @@ footer {
 <h2>Training Hearts. Teaching Minds. Building Disciples.</h2>
 <p>Christ-centered education rooted in faith, truth, and purpose.</p>
 <a href="#contact" class="button">Request Information</a>
+</section>
+
+<section class="carousel-section">
+<h2>📸 Student Life at Christ the Redeemer</h2>
+<div class="carousel-container">
+<div class="carousel-wrapper">
+<div class="carousel-slide active">
+<img src="student-photo-1.jpg" alt="Student 1">
+</div>
+<div class="carousel-slide">
+<img src="student-photo-2.jpg" alt="Student 2">
+</div>
+<div class="carousel-slide">
+<img src="student-photo-3.jpg" alt="Student 3">
+</div>
+<div class="carousel-slide">
+<img src="student-photo-4.jpg" alt="Student 4">
+</div>
+<div class="carousel-slide">
+<img src="student-photo-5.jpg" alt="Student 5">
+</div>
+<button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
+<button class="carousel-next" onclick="changeSlide(1)">❯</button>
+</div>
+<div class="carousel-dots">
+<span class="carousel-dot active" onclick="currentSlide(0)"></span>
+<span class="carousel-dot" onclick="currentSlide(1)"></span>
+<span class="carousel-dot" onclick="currentSlide(2)"></span>
+<span class="carousel-dot" onclick="currentSlide(3)"></span>
+<span class="carousel-dot" onclick="currentSlide(4)"></span>
+</div>
+</div>
 </section>
 
 <section class="section" id="about">
@@ -515,6 +667,54 @@ footer {
 <footer>
 <p>© 2026 Christ the Redeemer Christian Academy</p>
 </footer>
+
+<script>
+let currentSlideIndex = 0;
+let autoScrollInterval;
+
+function changeSlide(n) {
+    showSlide(currentSlideIndex += n);
+    resetAutoScroll();
+}
+
+function currentSlide(n) {
+    showSlide(currentSlideIndex = n);
+    resetAutoScroll();
+}
+
+function showSlide(n) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    if (n >= slides.length) {
+        currentSlideIndex = 0;
+    }
+    if (n < 0) {
+        currentSlideIndex = slides.length - 1;
+    }
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[currentSlideIndex].classList.add('active');
+    dots[currentSlideIndex].classList.add('active');
+}
+
+function autoScroll() {
+    currentSlideIndex++;
+    showSlide(currentSlideIndex);
+}
+
+function resetAutoScroll() {
+    clearInterval(autoScrollInterval);
+    autoScrollInterval = setInterval(autoScroll, 5000);
+}
+
+// Start auto-scroll when page loads
+window.addEventListener('load', () => {
+    autoScrollInterval = setInterval(autoScroll, 5000);
+});
+</script>
 
 </body>
 </html>
