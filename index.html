@@ -220,6 +220,76 @@ footer {
     margin-top: 8px;
     opacity: 0.9;
 }
+
+/* ACSI Accreditation Section */
+.acsi-section {
+    background: linear-gradient(135deg, #e8f0f7 0%, #f0f4f8 100%);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.acsi-section h2 {
+    color: #0b3d91;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.acsi-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.acsi-logo {
+    flex: 0 0 auto;
+}
+
+.acsi-logo a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.acsi-logo a:hover {
+    transform: scale(1.05);
+}
+
+.acsi-logo img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.acsi-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.acsi-text p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 15px 0;
+}
+
+.acsi-link {
+    display: inline-block;
+    background: #0b3d91;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.acsi-link:hover {
+    background: #1a5ab3;
+}
 </style>
 </head>
 
@@ -247,6 +317,23 @@ footer {
 <h2>About Us</h2>
 <p>Christ the Redeemer Christian Academy exists to provide a Christ-centered, biblically grounded education that develops students spiritually, academically, and morally.</p>
 <p>Our mission is to raise students with a strong Biblical worldview who are prepared to serve God, their families, and their communities.</p>
+</section>
+
+<section class="acsi-section">
+<h2>🏆 Now ACSI Accredited!</h2>
+<div class="acsi-container">
+<div class="acsi-logo">
+<a href="https://www.acsi.org" target="_blank" rel="noopener noreferrer">
+<img src="https://www.acsi.org/Images/acsi_seal_2024.png" alt="ACSI Accreditation Seal">
+</a>
+</div>
+<div class="acsi-text">
+<p><strong>Christ the Redeemer Christian Academy is proud to be accredited by the Association of Christian Schools International (ACSI).</strong></p>
+<p>ACSI accreditation demonstrates our commitment to educational excellence, Christian values, and rigorous academic standards. Our school meets the highest benchmarks for curriculum, faculty qualifications, and student outcomes.</p>
+<p>Learn more about what ACSI accreditation means for your family and our community.</p>
+<a href="https://www.acsi.org" target="_blank" rel="noopener noreferrer" class="acsi-link">Visit ACSI Website</a>
+</div>
+</div>
 </section>
 
 <section class="section" id="academics">
