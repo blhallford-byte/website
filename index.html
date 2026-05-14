@@ -244,24 +244,47 @@ footer {
     gap: 30px;
 }
 
-.acsi-logo {
+.acsi-badge {
     flex: 0 0 auto;
-}
-
-.acsi-logo a {
-    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0b3d91 0%, #1a5ab3 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }
 
-.acsi-logo a:hover {
-    transform: scale(1.05);
+.acsi-badge:hover {
+    transform: scale(1.1);
 }
 
-.acsi-logo img {
-    max-width: 180px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.acsi-badge a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.acsi-badge-icon {
+    font-size: 48px;
+    margin-bottom: 5px;
+}
+
+.acsi-badge-text {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.2;
 }
 
 .acsi-text {
@@ -322,9 +345,10 @@ footer {
 <section class="acsi-section">
 <h2>🏆 Now ACSI Accredited!</h2>
 <div class="acsi-container">
-<div class="acsi-logo">
+<div class="acsi-badge">
 <a href="https://www.acsi.org" target="_blank" rel="noopener noreferrer">
-<img src="https://www.acsi.org/Images/acsi_seal_2024.png" alt="ACSI Accreditation Seal">
+<div class="acsi-badge-icon">✓</div>
+<div class="acsi-badge-text">ACSI Accredited</div>
 </a>
 </div>
 <div class="acsi-text">
