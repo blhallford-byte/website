@@ -94,113 +94,27 @@ footer {
 }
 
 /* Carousel Styles */
-.carousel-section {
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #f0f4f8 0%, #e8f0f7 100%);
-}
+<section class="carousel-section">
+  <h2>📸 Student Life at Christ the Redeemer</h2>
 
-.carousel-section h2 {
-    text-align: center;
-    color: #0b3d91;
-    margin-bottom: 30px;
-}
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
 
-.carousel-container {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+      <div class="carousel-slide active">
+        <img src="images/class1.jpg" alt="Students Learning">
+      </div>
 
-.carousel-wrapper {
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-}
+      <div class="carousel-slide">
+        <img src="images/students.jpg" alt="Class Activities">
+      </div>
 
-.carousel-slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: fadeIn 0.8s;
-}
+      <div class="carousel-slide">
+        <img src="images/readingtime.jpg" alt="Reading Time">
+      </div>
 
-.carousel-slide.active {
-    display: block;
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.carousel-prev, .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(11, 61, 145, 0.8);
-    color: white;
-    border: none;
-    font-size: 28px;
-    padding: 15px 20px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-prev:hover, .carousel-next:hover {
-    background: rgba(11, 61, 145, 1);
-}
-
-.carousel-prev {
-    left: 15px;
-}
-
-.carousel-next {
-    right: 15px;
-}
-
-.carousel-dots {
-    text-align: center;
-    padding: 20px;
-    background: white;
-}
-
-.carousel-dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 6px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-dot.active {
-    background-color: #c8102e;
-}
-
-.carousel-dot:hover {
-    background-color: #999;
-}
+    </div>
+  </div>
+</section>
 
 /* Tuition Section Styles */
 #tuition {
